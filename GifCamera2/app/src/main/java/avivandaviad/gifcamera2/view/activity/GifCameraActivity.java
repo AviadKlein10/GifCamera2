@@ -9,6 +9,7 @@ import android.os.Handler;
 import android.view.WindowManager;
 
 import avivandaviad.gifcamera2.R;
+import avivandaviad.gifcamera2.SharedPreferencesManager;
 import avivandaviad.gifcamera2.presenter.BaseView;
 import avivandaviad.gifcamera2.presenter.GifCameraPresenter;
 import avivandaviad.gifcamera2.presenter.Presenter;
@@ -37,6 +38,7 @@ public class GifCameraActivity extends BaseActivity implements BaseView, GifCame
         setContentView(R.layout.activity_main);
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
         handler = new Handler();
+        ((GifCameraPresenter)mPresenter).setFrameCount(SharedPreferencesManager.loadValue(getApplicationContext(),SharedPreferencesManager.KEY_FRAME_COUNT));
         showCameraFragment();
 
     }

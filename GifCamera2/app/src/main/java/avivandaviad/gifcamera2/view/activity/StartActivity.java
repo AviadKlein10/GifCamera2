@@ -5,15 +5,13 @@ import android.content.pm.PackageManager;
 import android.os.Bundle;
 import android.view.View;
 import android.view.WindowManager;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.Toast;
 
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
-import java.util.Date;
-
 import avivandaviad.gifcamera2.R;
 import avivandaviad.gifcamera2.presenter.BaseView;
+import avivandaviad.gifcamera2.presenter.OnSettingCallBack;
 import avivandaviad.gifcamera2.presenter.OnStartCallBack;
 import avivandaviad.gifcamera2.presenter.Presenter;
 import avivandaviad.gifcamera2.presenter.StartPresenter;
@@ -23,7 +21,7 @@ import avivandaviad.gifcamera2.view.BaseActivity;
  * Created by DELL on 20/07/2017.
  */
 
-public class StartActivity extends BaseActivity implements BaseView, OnStartCallBack {
+public class StartActivity extends BaseActivity implements BaseView, OnStartCallBack,OnSettingCallBack {
 
 
     @SuppressLint("NewApi")
@@ -33,12 +31,20 @@ public class StartActivity extends BaseActivity implements BaseView, OnStartCall
         setContentView(R.layout.start_main);
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
         ImageView startImageBtn = (ImageView) findViewById(R.id.start_btn);
+        Button btnSetting = (Button) findViewById(R.id.btn_settings);
         startImageBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-              
+
                 ((StartPresenter) mPresenter).onStartPressed();
-                
+
+            }
+        });
+        btnSetting.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                ((StartPresenter) mPresenter).onSettingsPressed();
+
             }
         });
     }
@@ -85,5 +91,10 @@ public class StartActivity extends BaseActivity implements BaseView, OnStartCall
     public void onStartPressed() {
 
         //((StartPresenter)mPresenter).onStartPressed();
+    }
+
+    @Override
+    public void onSettingsPressed() {
+
     }
 }

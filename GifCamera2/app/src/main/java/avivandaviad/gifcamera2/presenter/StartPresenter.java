@@ -1,7 +1,6 @@
 package avivandaviad.gifcamera2.presenter;
 
 import android.Manifest;
-import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.support.v4.app.ActivityCompat;
@@ -10,9 +9,8 @@ import android.support.v4.content.ContextCompat;
 import java.util.ArrayList;
 import java.util.List;
 
-import avivandaviad.gifcamera2.presenter.Presenter;
 import avivandaviad.gifcamera2.view.activity.GifCameraActivity;
-
+import avivandaviad.gifcamera2.view.activity.SettingsActivity;
 import avivandaviad.gifcamera2.view.activity.StartActivity;
 
 /**
@@ -31,10 +29,17 @@ public class StartPresenter extends Presenter<StartActivity> implements OnStartC
     @Override
     public void onStartPressed() {
         if(checkPermission()){
-            Intent intent = new Intent(mView.getApplicationContext(),GifCameraActivity.class);
-            mView.startActivity(intent);
-            mView.finish();
+                Intent intent = new Intent(mView.getApplicationContext(),GifCameraActivity.class);
+                mView.startActivity(intent);
+                mView.finish();
         }
+    }
+
+    @Override
+    public void onSettingsPressed() {
+        Intent intent = new Intent(mView.getApplicationContext(),SettingsActivity.class);
+        mView.startActivity(intent);
+        mView.finish();
     }
 
     @Override

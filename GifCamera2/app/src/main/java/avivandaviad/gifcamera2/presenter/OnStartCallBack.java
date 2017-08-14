@@ -6,4 +6,5 @@ package avivandaviad.gifcamera2.presenter;
 
 public interface OnStartCallBack {
     void onStartPressed();
+    void onSettingsPressed();
 }

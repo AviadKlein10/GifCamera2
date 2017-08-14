@@ -16,10 +16,15 @@
         android:icon="@drawable/logo_gif"
         android:label="@string/app_name"
         android:roundIcon="@drawable/logo_gif"
-        android:supportsRtl="true"
+        android:supportsRtl="false"
         android:theme="@style/AppTheme.NoActionBar">
         <activity
             android:name=".view.activity.GifCameraActivity"
+            android:screenOrientation="portrait">
+
+        </activity>
+        <activity
+            android:name=".view.activity.SettingsActivity"
             android:screenOrientation="portrait">
 
         </activity>

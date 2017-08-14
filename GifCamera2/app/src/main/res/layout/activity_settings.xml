@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent"
+    android:background="#111111">
+
+    <TextView
+        android:text="Duration between frames:"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/vid_duration"
+        android:textSize="30sp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="42dp"
+        android:textColor="#ffffff" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/vid_duration"
+        android:hint="number"
+        android:layout_alignStart="@+id/vid_duration"
+        android:id="@+id/edit_duration_between_frames"
+        android:textSize="26sp"
+        android:imeOptions="actionDone"
+        android:lines="1"
+        android:inputType="number"
+        android:maxLines="1"
+        android:textColor="#ffffff"
+        android:textColorHint="@android:color/darker_gray" />
+
+    <TextView
+        android:text="Display duration of each frame:"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/duration_for_frame"
+        android:textSize="30sp"
+        android:layout_below="@+id/edit_duration_between_frames"
+        android:layout_alignStart="@+id/edit_duration_between_frames"
+        android:textColor="#ffffff" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="number"
+        android:layout_below="@+id/duration_for_frame"
+        android:layout_alignStart="@+id/duration_for_frame"
+        android:id="@+id/edit_duration_for_frame"
+        android:textSize="26sp"
+        android:imeOptions="actionDone"
+        android:lines="1"
+        android:inputType="number"
+        android:maxLines="1"
+        android:textColor="#ffffff"
+        android:textColorHint="@android:color/darker_gray" />
+
+    <TextView
+        android:text="Frame count:"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/frame_count"
+        android:textSize="30sp"
+        android:layout_below="@+id/edit_duration_for_frame"
+        android:layout_alignStart="@+id/edit_duration_for_frame"
+        android:textColor="#ffffff" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="number"
+        android:layout_below="@+id/frame_count"
+        android:layout_alignStart="@+id/frame_count"
+        android:id="@+id/edit_frame_count"
+        android:textSize="26sp"
+        android:imeOptions="actionDone"
+        android:lines="1"
+        android:inputType="number"
+        android:maxLines="1"
+        android:textColor="#ffffff"
+        android:textColorHint="@android:color/darker_gray" />
+    <TextView
+        android:text="Quslity (size):"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="30sp"
+        android:id="@+id/Quality"
+        android:layout_below="@+id/edit_frame_count"
+        android:layout_alignStart="@+id/edit_frame_count"
+        android:textColor="#ffffff" />
+
+    <Spinner
+        android:layout_width="wrap_content"
+        android:layout_height="26sp"
+        android:layout_below="@+id/Quality"
+        android:layout_alignStart="@+id/Quality"
+        android:id="@+id/spinner_quality" />
+
+    <TextView
+        android:text="Title:"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="30sp"
+        android:id="@+id/title"
+        android:layout_below="@+id/spinner_quality"
+        android:layout_alignStart="@+id/spinner_quality"
+        android:textColor="#ffffff" />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="text"
+        android:layout_below="@+id/title"
+        android:layout_alignStart="@+id/title"
+        android:id="@+id/edit_title"
+        android:layout_marginRight="30dp"
+        android:textSize="26sp"
+        android:imeOptions="actionDone"
+        android:lines="1"
+        android:inputType="text"
+        android:maxLines="1"
+        android:textColor="#ffffff"
+        android:textColorHint="@android:color/darker_gray"
+        android:tag="tag_title" />
+
+    <TextView
+        android:text="Font:"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="30sp"
+        android:id="@+id/font"
+        android:layout_below="@+id/edit_title"
+        android:layout_alignStart="@+id/edit_title"
+        android:textColor="#ffffff" />
+
+    <Spinner
+        android:layout_width="wrap_content"
+        android:layout_height="26sp"
+        android:layout_below="@+id/font"
+        android:layout_alignStart="@+id/font"
+        android:id="@+id/spinner_font" />
+    <TextView
+        android:text="Font size:"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="30sp"
+        android:id="@+id/font_size"
+        android:layout_below="@+id/spinner_font"
+        android:layout_alignStart="@+id/spinner_font"
+        android:textColor="#ffffff" />
+
+    <Spinner
+        android:layout_width="wrap_content"
+        android:layout_height="26sp"
+        android:layout_below="@+id/font_size"
+        android:layout_alignStart="@+id/font_size"
+        android:id="@+id/spinner_font_size" />
+
+    <TextView
+        android:text="Add frame:"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="30sp"
+        android:id="@+id/add_frame"
+        android:layout_below="@+id/spinner_font_size"
+        android:layout_alignStart="@+id/spinner_font_size"
+        android:textColor="#ffffff" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Gallery"
+        android:layout_below="@+id/add_frame"
+        android:layout_alignStart="@+id/add_frame"
+        android:id="@+id/btn_add_frame"
+        android:textColor="#ffffff"
+        android:textSize="26sp"
+        android:background="@android:color/darker_gray" />
+
+</RelativeLayout>

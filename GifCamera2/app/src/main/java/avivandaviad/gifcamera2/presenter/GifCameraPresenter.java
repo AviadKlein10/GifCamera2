@@ -16,7 +16,7 @@ import avivandaviad.gifcamera2.view.fragments.CameraFrag;
 
 public class GifCameraPresenter extends Presenter<GifCameraActivity> implements GifCreationCallback {
     private static final int CAPTURE_FRAME_RATE = 700;
-    private static final int FRAMES_COUNT = 7;
+    private static int FRAMES_COUNT = 7;
     private static final int COUNT_DOWN_TIME = 3;
 
     private ArrayList<Bitmap> previewBitmaps;
@@ -62,6 +62,10 @@ public class GifCameraPresenter extends Presenter<GifCameraActivity> implements 
                 mView.handleGifReady(uri);
             }
         });
+    }
+
+    public void setFrameCount(String newValue) {
+        FRAMES_COUNT = Integer.parseInt(newValue);
     }
 
     public interface GifCameraPresenterCallback extends BaseView {
